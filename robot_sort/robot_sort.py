@@ -96,8 +96,32 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+        # We will be using the light as a check on whether or not a swap has happened. This will give us our while loop indicater for when we are finished.
+        # Turn on light
+        # while loop with light is on
+            # Turn light off
+            # pick up item- none in list[0]
+            # While can move right
+                # move right
+                # compare
+                # if in line item higher 
+                    # swap & 
+                    # if light off
+                        # turn light on
+            
+            # compare
+                # if in line item is less:
+                    # Swap
+                    # if light off
+                        # turn light on
+                    # go to start swap to take none
+                # if in line item is none
+                    #swap 
+                # if in line item is more or equal
+                    # go left run compare on new value
+            
+
+        
 
 
 if __name__ == "__main__":
