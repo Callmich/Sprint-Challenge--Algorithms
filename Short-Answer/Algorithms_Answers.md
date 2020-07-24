@@ -25,10 +25,15 @@ b)
 
 c)
 <!-- def bunnyEars(bunnies):
-      if bunnies == 0:
-        return 0
+      if bunnies == 0: complexity O(1)
+        return 0    complexity of O(1)
 
-      return 2 + bunnyEars(bunnies-1) -->
+      return 2 + bunnyEars(bunnies-1)  complexity of O(n)
+
+    O(1) + O(1) + O(n)
+      -->
+
+      I beleive the complexity of C is O(n). As bunnies grows by one it will cause one additional recursion on the return meaning this should grow linerarly. That means it should be O(n)
 
 ## Exercise II
 
