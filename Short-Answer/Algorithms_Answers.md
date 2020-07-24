@@ -37,4 +37,8 @@ c)
 
 ## Exercise II
 
+I think a very good way of handling this problem would be to attack it with the equivilent of a binary search tree. You can consider the "list" already ordered as the height will increase by one for each floor you move up. We'll be looking for the first floor where an egg breaks.
 
+The quickest way to eastablish the first floor where an egg breaks is to eliminate the most possible choices at a time (just like a binary search tree). You start by going to the middle floor of the tower and dropping an egg there. If it breaks, you can eliminate all of the floors above and set this one as the break point. If it does not break, you can eliminate all of the floors below and set this as the afe point.
+
+After you have the info on the first drop you then pick the middle of the remaining and repeat this process until the break point and the safe point are next to each other.
