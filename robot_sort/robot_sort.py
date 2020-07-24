@@ -97,31 +97,36 @@ class SortingRobot:
         Sort the robot's list.
         """
         # We will be using the light as a check on whether or not a swap has happened. This will give us our while loop indicater for when we are finished.
-        # Turn on light
-        # while loop with light is on
-            # Turn light off
-            # pick up item- none in list[0]
-            # While can move right
-                # move right
-                # compare
-                # if in line item higher 
-                    # swap & 
-                    # if light off
-                        # turn light on
-            
-            # compare
-                # if in line item is less:
-                    # Swap
-                    # if light off
-                        # turn light on
-                    # go to start swap to take none
-                # if in line item is none
-                    #swap 
-                # if in line item is more or equal
-                    # go left run compare on new value
-            
 
-        
+        # Turn on light
+        self.set_light_on()
+
+        # while loop with light is on
+        while self.light_is_on():
+            self.swap_item() # pick up item- none in list[0]
+
+            
+            while self.can_move_right(): # While can move right
+                self.move_right() # move right
+                if self.compare_item() == 1:  # compare & if in line item smaller
+                    self.swap_item() # swap 
+                # this while loop ensures we have the lowest number when we can no longer move right
+
+            # Next we want to move all the way back to None. AKA - while compared item is not None
+            while self.compare_item() != None:
+                # move left
+                self.move_left()
+    
+            # when this is broken aka - at None we will swap
+            self.swap_item()
+            # if you can move right
+            if self.can_move_right():
+                # move right - this will restart the loop at the top but at one place over None at list[x+1]
+                self.move_right()
+            # else you cant go right and everything should be in the right spot. We are good to turn off the light
+            else:
+                self.set_light_off()
+
 
 
 if __name__ == "__main__":
